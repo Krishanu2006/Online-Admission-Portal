@@ -160,6 +160,9 @@ export default function StudentRegister() {
           <span>Already registered?</span>
           <Link to="/student/login">Sign in</Link>
         </div>
+        <div className="auth-footer">
+          <Link to="/">Back to admission portal</Link>
+        </div>
       </div>
     </div>
   );

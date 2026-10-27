@@ -102,6 +102,9 @@ export default function StudentLogin() {
             Admin Login
           </Link>
         </div>
+        <div className="auth-footer">
+          <Link to="/">Back to admission portal</Link>
+        </div>
       </div>
     </div>
   );
