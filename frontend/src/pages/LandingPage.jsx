@@ -5,6 +5,13 @@ import PublicHeader from "../components/layout/PublicHeader";
 import Footer from "../components/layout/Footer";
 
 export default function LandingPage() {
+  const journeySteps = [
+    "Create account",
+    "Complete application",
+    "Upload documents",
+    "Pay application fee",
+    "Track admission status"
+  ];
   return (
     <div className="public-page">
       <PublicHeader />
@@ -35,12 +42,14 @@ export default function LandingPage() {
             <span className="mini-label">APPLICATION JOURNEY</span>
             <span className="hero-dot" />
           </div>
-          {["Create account", "Complete application", "Upload documents", "Pay application fee", "Track status"].map((item, i) => (
+
+          {journeySteps.map((item, index) => (
             <div className="journey-item" key={item}>
-              <span className={i < 2 ? "journey-number complete" : "journey-number"}>{i < 2 ? "✓" : i + 1}</span>
+              <span className="journey-number">{index + 1}</span>
+
               <div>
                 <strong>{item}</strong>
-                <small>{i < 2 ? "Completed" : "Next step"}</small>
+                <small>Step {index + 1}</small>
               </div>
             </div>
           ))}

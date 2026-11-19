@@ -27,6 +27,10 @@ const registerStudent = async ({
     throw new Error("Email is already registered.");
   }
 
+  if (!/^\d{10}$/.test(mobile.trim())) {
+    throw new Error("Mobile number must be exactly 10 digits long.");
+  }
+
   const existingMobile = await User.findByMobile(mobile.trim());
 
   if (existingMobile) {
